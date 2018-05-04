@@ -1,6 +1,11 @@
 
 import random
 from ezprint import p
+import os
+
+
+def cls():
+	os.system('cls')
 
 
 def dolor1():
@@ -15,7 +20,19 @@ def dolor3():
 	m3 = '┌┐\n││\n└┘'
 	p(m3)
 
+
+def menu():
+	p('===GAME FOR WINDOWS===')
+	p('======COIN_FARME======')
+	p('=========MENU=========')
+	p('====1-START MINING====')
+	v = input('>>>')
+	if v == '1':
+		main() 
+
+
 def main():
+	cls()
 	while True:
 		r = random.randint(1,100)
 		if r < 50:
@@ -27,10 +44,12 @@ def main():
 		p('===============================')
 		p('help:exit')
 		v = input('Click to Enter(continue): ')
+		cls()
 		if v == 'exit':
-			pass
+			menu()
 
 if __name__ == '__main__':
+	menu()
 	main()
 
 
