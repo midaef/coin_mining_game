@@ -26,6 +26,7 @@ def dolor3():
 
 def menu():
 	global m 
+	cls()
 	p('===GAME FOR WINDOWS===')
 	p('======COIN_FARME======')
 	p('=========MENU=========')
@@ -49,8 +50,9 @@ def main():
 		else:
 			dolor3()
 			m = m + 1
+			p('That is fine! You have found got 1 coin')
 		p('===============================')
-		p('help:exit')
+		p('Help: exit')
 		v = input('Click to Enter(continue): ')
 		cls()
 		if v == 'exit':
