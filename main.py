@@ -4,8 +4,8 @@ from ezprint import p
 import os
 
 
-m = 0
-
+m = 30
+g = 1
 
 def cls():
 	os.system('cls')
@@ -37,22 +37,33 @@ def menu():
 	v = input('>>>')
 	if v == '1':
 		main() 
-	if v == '2':
+	elif v == '2':
 		market()
-	if v == '3':
+	elif v == '3':
 		exit()
-
+	else:
+		p('Incorrect choose!')
 
 def market():
+	global m
+	global g
 	cls()
 	p('1-To buy for 30 coins: +2 coins for mining')
 	v = input('>>>')
 	if v == '1':
-		pass
+		if m >=30:
+			g = g + 1
+			m = m - 30
+			menu()
+		else:
+			p('Not enough money')
+	else:
+		p('Incorrect choose!')
 
 
 def main():
 	global m 
+	global g
 	cls()
 	while True:
 		p('Your balance: ' + str(m) + ' coin')
@@ -64,7 +75,7 @@ def main():
 			dolor1()
 		else:
 			dolor3()
-			m = m + 1
+			m = m + g
 			p('That is fine! You have found got 1 coin')
 		p('========================================')
 		p('Commands: "exit"- exit to menu')
