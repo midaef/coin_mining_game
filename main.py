@@ -45,6 +45,10 @@ def menu():
 
 def market():
 	cls()
+	p('1-To buy for 30 coins: +2 coins for mining')
+	v = input('>>>')
+	if v == '1':
+		pass
 
 
 def main():
