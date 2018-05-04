@@ -3,6 +3,7 @@ import random
 from ezprint import p
 import os
 
+m = 0
 
 def cls():
 	os.system('cls')
@@ -25,6 +26,7 @@ def menu():
 	p('===GAME FOR WINDOWS===')
 	p('======COIN_FARME======')
 	p('=========MENU=========')
+	p('===YOUR BALANCE: ' + str(m) + '====')
 	p('====1-START MINING====')
 	v = input('>>>')
 	if v == '1':
