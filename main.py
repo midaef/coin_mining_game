@@ -4,8 +4,10 @@ from ezprint import p
 import os
 
 
-m = 30
+m = 70
 g = 1
+sh1 = 50
+sh2 = 50
 
 def cls():
 	os.system('cls')
@@ -44,34 +46,62 @@ def menu():
 	else:
 		p('Incorrect choose!')
 
+
 def market():
+	global sh1
+	global sh2
 	global m
 	global g
 	cls()
-	p('1-To buy for 30 coins: +2 coins for mining')
+	p('=========WECLOME TO MARKETPLACE============')
+	p('1-To buy for 30 coins: +1 coins for mining')
+	p('2-To buy for 50 coins: +2% for mining')
+	p('3-To buy for 70 coins: +4 coins for mining')
+	p('===========================================')
 	v = input('>>>')
 	if v == '1':
-		if m >=30:
+		if m >= 30:
 			g = g + 1
 			m = m - 30
 			menu()
 		else:
 			p('Not enough money')
+			menu()
+	elif v == '2':
+		if m >= 30:
+			m = m - 50
+			sh1 = sh1 - 1
+			sh2 = sh2 + 1
+			menu()
+		else:
+			p('Not enough money')
+			menu()
+	elif v == '3':
+		if m >= 70:
+			g = g + 4
+			m = m - 70
+			menu()
+		else:
+			p('Not enough money')
+			menu()
 	else:
 		p('Incorrect choose!')
+		menu()
 
 
 def main():
 	global m 
+	global sh1
+	global sh2
 	global g
 	cls()
 	while True:
 		p('Your balance: ' + str(m) + ' coin')
 		p('=======================================')
 		r = random.randint(1,100)
-		if r < 50:
+		if r < sh1:
 			dolor2()
-		elif r > 50:
+		elif r > sh2:
 			dolor1()
 		else:
 			dolor3()
