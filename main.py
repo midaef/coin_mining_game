@@ -45,7 +45,6 @@ def menu():
 
 def market():
 	cls()
-	pass
 
 
 def main():
