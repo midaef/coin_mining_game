@@ -3,7 +3,9 @@ import random
 from ezprint import p
 import os
 
+
 m = 0
+
 
 def cls():
 	os.system('cls')
@@ -23,6 +25,7 @@ def dolor3():
 
 
 def menu():
+	global m 
 	p('===GAME FOR WINDOWS===')
 	p('======COIN_FARME======')
 	p('=========MENU=========')
@@ -34,8 +37,10 @@ def menu():
 
 
 def main():
+	global m 
 	cls()
 	while True:
+		p('===============================')
 		r = random.randint(1,100)
 		if r < 50:
 			dolor2()
@@ -43,6 +48,7 @@ def main():
 			dolor1()
 		else:
 			dolor3()
+			m = m + 1
 		p('===============================')
 		p('help:exit')
 		v = input('Click to Enter(continue): ')
