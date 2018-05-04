@@ -32,16 +32,28 @@ def menu():
 	p('=========MENU=========')
 	p('===YOUR BALANCE: ' + str(m) + '====')
 	p('====1-START MINING====')
+	p('====2-MARKETPLACE=====')
+	p('====3-EXIT============')
 	v = input('>>>')
 	if v == '1':
 		main() 
+	if v == '2':
+		market()
+	if v == '3':
+		exit()
+
+
+def market():
+	cls()
+	pass
 
 
 def main():
 	global m 
 	cls()
 	while True:
-		p('===============================')
+		p('Your balance: ' + str(m) + ' coin')
+		p('=======================================')
 		r = random.randint(1,100)
 		if r < 50:
 			dolor2()
@@ -51,8 +63,8 @@ def main():
 			dolor3()
 			m = m + 1
 			p('That is fine! You have found got 1 coin')
-		p('===============================')
-		p('Help: exit')
+		p('========================================')
+		p('Commands: "exit"- exit to menu')
 		v = input('Click to Enter(continue): ')
 		cls()
 		if v == 'exit':
